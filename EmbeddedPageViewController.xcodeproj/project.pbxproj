@@ -26,6 +26,8 @@
 		8307224A1C1620D100B68ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		830722501C16238C00B68ABB /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		830722521C16258400B68ABB /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		830722541C162AC200B68ABB /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		830722551C162AC200B68ABB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,8 @@
 		830722321C1620D100B68ABB = {
 			isa = PBXGroup;
 			children = (
+				830722541C162AC200B68ABB /* LICENSE */,
+				830722551C162AC200B68ABB /* README.md */,
 				8307223D1C1620D100B68ABB /* EmbeddedPageViewController */,
 				8307223C1C1620D100B68ABB /* Products */,
 			);
