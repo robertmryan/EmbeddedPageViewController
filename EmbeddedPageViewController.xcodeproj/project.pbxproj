@@ -14,6 +14,8 @@
 		830722491C1620D100B68ABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 830722471C1620D100B68ABB /* LaunchScreen.storyboard */; };
 		830722511C16238C00B68ABB /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830722501C16238C00B68ABB /* PageViewController.swift */; };
 		830722531C16258400B68ABB /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830722521C16258400B68ABB /* ChildViewController.swift */; };
+		8307227A1C16374E00B68ABB /* tulip.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 830722781C16374E00B68ABB /* tulip.jpg */; };
+		8307227B1C16374E00B68ABB /* daisy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 830722791C16374E00B68ABB /* daisy.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		830722521C16258400B68ABB /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
 		830722541C162AC200B68ABB /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		830722551C162AC200B68ABB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		830722781C16374E00B68ABB /* tulip.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tulip.jpg; sourceTree = "<group>"; };
+		830722791C16374E00B68ABB /* daisy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = daisy.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				830722501C16238C00B68ABB /* PageViewController.swift */,
 				830722521C16258400B68ABB /* ChildViewController.swift */,
 				830722421C1620D100B68ABB /* Main.storyboard */,
+				830722781C16374E00B68ABB /* tulip.jpg */,
+				830722791C16374E00B68ABB /* daisy.jpg */,
 				830722451C1620D100B68ABB /* Assets.xcassets */,
 				830722471C1620D100B68ABB /* LaunchScreen.storyboard */,
 				8307224A1C1620D100B68ABB /* Info.plist */,
@@ -132,8 +138,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8307227B1C16374E00B68ABB /* daisy.jpg in Resources */,
 				830722491C1620D100B68ABB /* LaunchScreen.storyboard in Resources */,
 				830722461C1620D100B68ABB /* Assets.xcassets in Resources */,
+				8307227A1C16374E00B68ABB /* tulip.jpg in Resources */,
 				830722441C1620D100B68ABB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +304,7 @@
 				8307224F1C1620D100B68ABB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
