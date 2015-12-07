@@ -27,6 +27,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
     
     override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
         viewControllerCache.removeAllObjects()
     }
 
