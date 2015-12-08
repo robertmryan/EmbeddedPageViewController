@@ -8,11 +8,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+/// Protocol for child to notify parent that page number changed
+
+protocol PageChangeDelegate {
+    
+    /// Page changed
+    ///
+    /// - parameter page:  The zero-based index of the page we're going to
+    /// - parameter total: The count of pages
+    
+    func didChangePage(page: Int, total: Int)
+}
+
+class ViewController: UIViewController, PageChangeDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func didChangePage(page: Int, total: Int) {
+        print("\(page) of \(total)")
     }
 
     @IBAction func didTapButtonOne(sender: UIButton) {

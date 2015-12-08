@@ -12,7 +12,7 @@ protocol ChildViewControllerProtocol: class {
     var index: Int! { get set }
 }
 
-class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
+class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
     var childStoryboardIds = ["PageOne", "PageTwo"]
     
@@ -22,16 +22,32 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         super.viewDidLoad()
         
         dataSource = self
+        delegate = self
         
-        setViewControllers([viewControllerForIndex(0)], direction: .Forward, animated: false, completion: nil)
+        let controller = viewControllerForIndex(0)
+        setViewControllers([controller], direction: .Forward, animated: false, completion: nil)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        updatePageForPageViewController(self, toPageForController: viewControllers![0])
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
         viewControllerCache.removeAllObjects()
     }
-
+    
+    // MARK: UIPageViewControllerDelegate
+    
+    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
+        updatePageForPageViewController(pageViewController, toPageForController: pendingViewControllers[0])
+    }
+    
+    // MARK: UIPageViewControllerDataSource
+    
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         let current = viewController as! ChildViewControllerProtocol
 
@@ -52,6 +68,27 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         return nil
     }
 
+    // MARK: Helper methods
+    
+    /// Update parent that the page changed
+    ///
+    /// - parameter pageViewController:   The page view controller for which the page has changed
+    /// - parameter toPageForController:  The child/page controller that we have transitioned to
+    
+    func updatePageForPageViewController(pageViewController: UIPageViewController, toPageForController controller: UIViewController) {
+        if let child = controller as? ChildViewControllerProtocol {
+            if let parent = parentViewController as? PageChangeDelegate {
+                parent.didChangePage(child.index, total: childStoryboardIds.count)
+            }
+        }
+    }
+    
+    /// Retrieve view controller for this page number (index)
+    ///
+    /// - parameter currentIndex:   The page number for which we want to retrieve the view controller.
+    /// 
+    /// - returns:                  The view controller associated with this page number (index).
+    
     func viewControllerForIndex(currentIndex: Int) -> UIViewController {
         // get the storyboard id
         
