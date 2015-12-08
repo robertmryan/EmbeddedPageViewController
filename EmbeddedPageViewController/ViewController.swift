@@ -27,10 +27,14 @@ class ViewController: UIViewController, PageChangeDelegate {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    // MARK: PageChangeDelegate
+    
     func didChangePage(page: Int, total: Int) {
         print("\(page) of \(total)")
     }
 
+    // MARK: IBAction methods
+    
     @IBAction func didTapButtonOne(sender: UIButton) {
         print(__FUNCTION__)
     }
